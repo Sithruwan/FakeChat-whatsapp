@@ -1,0 +1,9 @@
+
+
+<app-main-header></app-main-header>
+<app-layout-controller (contactEmiter)="handleDataFromChild($event)"  ></app-layout-controller>
+<app-chat-context [contact_data]="contactData"></app-chat-context>
+<app-mobile-chat-context [contact_data]="contactData" ></app-mobile-chat-context>
+
+<app-chat-download></app-chat-download>
+<app-main-footer></app-main-footer>

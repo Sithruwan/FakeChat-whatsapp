@@ -1,0 +1,22 @@
+<div class="message received " *ngIf="message.user =='R'" [ngStyle]="{'width': dataBus.layoutMode ? '20% ' : '100% ' }">
+  <img *ngIf="message.imageURL" style="width:100%; height: auto; " src="{{message.imageURL}}">
+
+  {{message.text}}
+  <span class="metadata"><span class="time">{{message.time}}</span></span>
+</div>
+
+
+
+<div class="message sent " *ngIf="message.user =='S'"  [ngStyle]="{'width': dataBus.layoutMode ? '20% ' : '100% ' }">
+  <img *ngIf="message.imageURL" style=" width: 100%; height: auto;" src="{{message.imageURL}}" alt="sa" ><br>
+  {{message.text}}
+  <span class="metadata">
+    <span class="time">{{message.time}}</span>
+        <span class="tick" >
+                   <svg *ngIf="message.status=='sending'"  style="width: 13px; width: 13px;" fill="#7d8488" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" /></svg>
+                   <img *ngIf="message.status=='sent'" alt="Check sent" src="https://fakedetail.com/assets/images/check-sent.png" loading="lazy">
+                   <img *ngIf="message.status=='delivered'" alt="Delivere" src="https://fakedetail.com/assets/images/check-delivered.png" loading="lazy">
+                   <svg *ngIf="message.status=='read'" xmlns="http://www.w3.org/2000/svg" width="16" height="15" id="msg-dblcheck-ack" x="2063" y="2076"><path d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z" fill="#4fc3f7"/></svg>
+       </span>
+  </span>
+</div>
